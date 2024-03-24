@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="kj.css">
+    <style>
+        .book-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 600px;
+          }
+          
+          @keyframes initAnimation {
+            0% {
+              transform: rotateY(0deg);
+            }
+            100% {
+              transform: rotateY(-30deg);
+            }
+          }
+          
+          .book {
+            margin-top: 40px;
+            width: 200px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(-30deg);
+            transition: 1s ease;
+            animation: 1s ease 0s 1 initAnimation;
+          }
+          
+          .book-container:hover .book, 
+          .book-container:focus .book {
+            transform: rotateY(0deg);
+          }
+          
+          .book > :first-child {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #cdb373;
+
+            width: 200px;
+            height: 300px;
+            transform: translateZ(15px);
+            background-color: #1c4fad;
+            border-radius: 0 2px 2px 0;
+            box-shadow: 5px 5px 20px #666;
+          }
+          
+          .book::before {
+            position: absolute;
+            content: ' ';
+            background-color:black;
+            left: 0;
+            top: 1px;
+            width: 28px;
+            height: 298px;
+            transform: translateX(184px) rotateY(90deg);
+            background: linear-gradient(90deg, 
+              #fff 0%,
+              #f9f9f9 5%,
+              #fff 10%,
+              #f9f9f9 15%,
+              #fff 20%,
+              #f9f9f9 25%,
+              #fff 30%,
+              #f9f9f9 35%,
+              #fff 40%,
+              #f9f9f9 45%,
+              #fff 50%,
+              #f9f9f9 55%,
+              #fff 60%,
+              #f9f9f9 65%,
+              #fff 70%,
+              #f9f9f9 75%,
+              #fff 80%,
+              #f9f9f9 85%,
+              #fff 90%,
+              #f9f9f9 95%,
+              #fff 100%
+              );
+          }
+          
+          .book::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: ' ';
+            width: 200px;
+            height: 300px;
+            transform: translateZ(-15px);
+            background-color: black;
+            border-radius: 0 2px 2px 0;
+            <!-- box-shadow: -10px 0 50px 10px #cdb373; -->
+
+          }
+          .gradient {
+            width: 100%px; /* Adjust width to control the gradient thickness */
+            height: 1px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+            z-index:1;
+          }
+    </style>
+</head>
+<body>
+    <div id="nav" style="display: flex;justify-content:center;width:100%;height:160px;background-color: transparet;">
+        <!-- <img src="/pngwing.com (17).png"> -->
+     <img src="https://drive.google.com/file/d/18JsZ-F5tTr3etaZpsRJ1GUiIspHfuxaI/view?usp=sharing" style="margin-top: 20px;">
+    </div>
+    <div>
+   <img src="/1324809.png" style="width: 100%;opacity:40%;">
+</div>
+<div id="first" class="background" style="margin: -15px; position:relative">
+    <div style="position: relative;" style="position: absolute;top:30px">
+        <div class="container" style="position: relative;">
+            <div class="content-wrapper" style="position: relative;">
+              <div class="content" id="div1">
+                <div style="display: flex;position:absolute;top:50%;">
+               <img src="/harry-potter-500-watchers-harry-potter-png-clipart-removebg-preview.png" style="height:200px">
+               <div class="box" style="margin-left: 30px; position:relative;">
+                <div class="box__line box__line--top"></div>
+                <div class="box__line box__line--right"></div>
+                <div class="box__line box__line--bottom"></div>
+                <div class="box__line box__line--left"></div>
+                <p style="position: absolute; top:25%; margin-left: 20px; margin-right:20px;font-family: Crimson Text, serif;">The Boy Who Lived, Defying Dark Lords with Courage and a Lightning Bolt Scar.
+                </p>
+              </div>
+              </div>
+            </div>
+            </div>
+            <div class="content-wrapper" style="position: relative;">
+                <div class="content" id="div2">
+                  <div style="display: flex;position:absolute;">
+                 <img src="/cbba5172ac052801fabee1e1b3e3ee8f__1_-removebg-preview.png" style="height:200px">
+                 <div class="box" style="margin-left: 10px; position:relative;">
+                  <div class="box__line box__line--top"></div>
+                  <div class="box__line box__line--right"></div>
+                  <div class="box__line box__line--bottom"></div>
+                  <div class="box__line box__line--left"></div>
+                  <p style="position: absolute; top:25%; margin-left: 10px; margin-right:20px;font-family: Crimson Text, serif;">The Brightest Witch of Her Age, Books and Brains in Perfect Harmony. 
+                    And it's leviOsa not leviosa</p>
+                </div>
+                </div>
+              </div>
+              </div>
+            <div class="content-wrapper">
+                <div class="content" id="div3">
+                    <div style="display: flex;position:absolute;left:10%">
+                   <img src="/transparent-ron-weasley-ron-weasley-11563043110lotjv3syex__1_-removebg-preview.png" style="height:200px">
+                   <div class="box" style="margin-left: 10px; position:relative;">
+                    <div class="box__line box__line--top"></div>
+                    <div class="box__line box__line--right"></div>
+                    <div class="box__line box__line--bottom"></div>
+                    <div class="box__line box__line--left"></div>
+                    <p style="position: absolute; top:25%; margin-left: 20px; margin-right:20px;font-family: Crimson Text, serif;">Loyal Friend and Brave Companion, Heart of Gryffindor, Comic Relief with Courage</p>
+                  </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div class="content" id="div3">
+                    <div style="display: flex;position:absolute;left:10%">
+                   <img src="/846a6b7c8137ed3eeb36d06be8956e93-removebg-preview.png" style="height:200px">
+                   <div class="box" style="margin-left: 30px; position:relative;">
+                    <div class="box__line box__line--top"></div>
+                    <div class="box__line box__line--right"></div>
+                    <div class="box__line box__line--bottom"></div>
+                    <div class="box__line box__line--left"></div>
+                    <p style="position: absolute; top:25%; margin-left: 20px; margin-right:20px;font-family: Crimson Text, serif;">He-Who-Must-Not-Be-Named, Dark Lord of Ambition and Fear, and Overcompensates for Lack of Nose with a Fiery Temper (seriously, can someone please recommend him a good plastic surgeon?).</p>
+                  </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+            <div class="arrow left" onclick="showPrevious()">&#10094;</div>
+            <div class="arrow right" onclick="showNext()">&#10095;</div>
+          </div>
+    </div>
+</div>
+
+<div id="second" class="background" style="margin: -15px; position:relative;display:flex;flex-wrap: wrap;width:100%">
+    <div style="display:flex;justify-content:center;position:absolute;top:5%;left:15%">
+    <div style="width:400px;height:1px;background-color:#cdb373;"></div>
+    <div style="display: flex;margin-right:40px;margin-left:40px">
+    <img src="/eb0fbfc1b0e4af0e249ec909f93e5893-removebg-preview.png" style="height: 40px;margin-top:-20px">
+    <h2 style="margin-top: -15px;font-family: Crimson Text, serif;font-size:30px;margin-left:5px">House</h2>
+</div>
+    <div style="width:400px;height:1px;background-color:#cdb373;"></div>
+</div>
+    <div style="width: 100%; display: flex; justify-content: center;margin:70px">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <div style="margin: 10px;margin-right:80px; width: calc(50% - 20px); max-width: 500px;">
+                <div style="border: 1px solid #a85; border-radius: 20px; background-color: black; display: flex; align-items: center; padding: 20px;">
+                    <img src="/Filled-Gryffindor.svg" style="height: 200px; margin-right: 20px;">
+                    <div>
+                        <h1 style="font-family: Crimson Text, serif; margin: 0;">Gryffindor</h1>
+                        <p style="font-family: Crimson Text, serif; font-size: 18px; margin: 10px 0;">Notable members include (of course) Harry Potter, Hermione Granger and Ron Weasley.</p>
+                        <p style="font-family: Crimson Text, serif; font-size: 18px; margin: 0;">You might belong in Gryffindor,
+                            Where dwell the brave at heart,
+                            Their daring, nerve and chivalry
+                            Set Gryffindors apart.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin: 10px; width: calc(50% - 20px); max-width: 500px;">
+                <div style="border: 1px solid #a85; border-radius: 20px; background-color: black; display: flex; align-items: center; padding: 20px;">
+                    <img src="/Filled-Hufflepuff.svg" style="height: 200px; margin-right: 20px;">
+                    <div>
+                        <h1 style="font-family: Crimson Text, serif; margin: 0;">Hufflepuff</h1>
+                        <p style="font-family: Crimson Text, serif; font-size: 18px; margin: 10px 0;">Notable members include Newt Scamander, Cedric Diggory and Nymphadora Tonks.</p>
+                        <p style="font-family: Crimson Text, serif; font-size: 18px; margin: 0;">You might belong in Hufflepuff
+                            Where they are just and loyal
+                            Those patient Hufflepuffs are true
+                            And unafraid of toil..</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin: 10px;;margin-right:80px; width:calc(50% - 20px); max-width: 500px;">
+                <div style="border: 1px solid #a85; border-radius: 20px; background-color: black; display: flex; align-items: center; padding: 20px;">
+                    <img src="/Filled-Ravenclaw.svg" style="height: 200px; margin-right: 20px;">
+                    <div>
+                        <h1 style="font-family: Crimson Text, serif; margin: 0;">Ravenclaw</h1>
+                        <p style="font-family: Crimson Text, serif; font-size: 18px; margin: 10px 0;">Notable members include Luna Lovegood, Gilderoy Lockhart and Filius Flitwick.</p>
+                        <p style="font-family: Crimson Text, serif; font-size: 18px; margin: 0;">Or yet in wise old Ravenclaw
+                            If you’ve a ready mind
+                            Where those of wit and learning
+                            Will always find their kind.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin: 10px; width: calc(50% - 20px); max-width: 500px;">
+                <div style="border: 1px solid #a85; border-radius: 20px; background-color: black; display: flex; align-items: center; padding: 20px;">
+                    <img src="/Filled-Slytherin.svg" style="height: 200px; margin-right: 20px;">
+                    <div>
+                        <h1 style="font-family: Crimson Text, serif; margin: 0;">Slytherin</h1>
+                        <p style="font-family: Crimson Text, serif; font-size: 18px; margin: 10px 0;">Notable members include Severus Snape, Draco Malfoy and (rather unfortunately) Lord Voldemort.</p>
+                        <p style="font-family: Crimson Text, serif; font-size: 18px; margin: 0;">Or perhaps in Slytherin
+                            You’ll make your real friends
+                            Those cunning folk use any means
+                            To achieve their ends.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   <div id="third" class="background"  style="margin: -15px;">
+    <section class="product"> 
+        <!-- <img src="/Phool_Logo-01_3fcb3962-855c-4f08-b7ad-5334d9132e4b_480x.webp" style="margin-left:70px;height: 100px;"> -->
+        <!-- <button class="pre-btn"><img src="./images/arrow.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/arrow.png" alt=""></button> -->
+        <div class="product-container">
+            <div class="product-card">
+                <a 
+                class="book-container"
+                href="https://www.amazon.in/Harry-Potter-Philosophers-Stone-Rowling/dp/1408855658/ref=sr_1_13?adgrpid=73576961751&dib=eyJ2IjoiMSJ9.wfTyxvY_fX8xHPuCfc-C0Z7JJ5Jr8RBYEJ8uHPSLmSSU0t7BqoDGnA0RLPwjPii9XuJgSzyK4z4Ti1IBiRCN6mCibFH27p8ALKH855AsrUGSGxzOKKNEqbRI3pWlJTA76Zg2tQdiiJ2BM5N1QtHUOAw1XM8F7cPBl9k1lXPgcIneYgdiJtsAqMf7WslITPtGJo-CJDKzAL6RaavxcMsHfL5MaFJJ6Rn3RKEjmkyMts0.CVatg4kMA9Cks2xaO-BFW6_FEcBhRVbSKeYvna5_2yg&dib_tag=se&ext_vrnc=hi&gclid=Cj0KCQjw-_mvBhDwARIsAA-Q0Q6avFSMaMJpHBKw-ObAEBVZEuUIAzTITq9sEU8m_4NVPOKC0D_173YaAjQ2EALw_wcB&hvadid=590653767070&hvdev=c&hvlocphy=1007816&hvnetw=g&hvqmt=b&hvrand=14102357533742322938&hvtargid=kwd-376289800791&hydadcr=24539_2265400&keywords=harry+potter+books+pack&qid=1711253597&sr=8-13"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <span class="book">
+                  <img
+                    alt=""
+                    src="/1.jpeg">
+                    />
+                </span>
+              </a>
+            </span>
+            </div>
+            <div class="product-card">
+                <a 
+                class="book-container"
+                href="https://www.amazon.in/Harry-Potter-Chamber-Secrets/dp/1408855666/ref=sr_1_14?adgrpid=73576961751&dib=eyJ2IjoiMSJ9.wfTyxvY_fX8xHPuCfc-C0Z7JJ5Jr8RBYEJ8uHPSLmSSU0t7BqoDGnA0RLPwjPii9XuJgSzyK4z4Ti1IBiRCN6mCibFH27p8ALKH855AsrUGSGxzOKKNEqbRI3pWlJTA76Zg2tQdiiJ2BM5N1QtHUOAw1XM8F7cPBl9k1lXPgcIneYgdiJtsAqMf7WslITPtGJo-CJDKzAL6RaavxcMsHfL5MaFJJ6Rn3RKEjmkyMts0.CVatg4kMA9Cks2xaO-BFW6_FEcBhRVbSKeYvna5_2yg&dib_tag=se&ext_vrnc=hi&gclid=Cj0KCQjw-_mvBhDwARIsAA-Q0Q6avFSMaMJpHBKw-ObAEBVZEuUIAzTITq9sEU8m_4NVPOKC0D_173YaAjQ2EALw_wcB&hvadid=590653767070&hvdev=c&hvlocphy=1007816&hvnetw=g&hvqmt=b&hvrand=14102357533742322938&hvtargid=kwd-376289800791&hydadcr=24539_2265400&keywords=harry+potter+books+pack&qid=1711253597&sr=8-14"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <span class="book">
+                  <img
+                    alt=""
+                    src="/2.jpeg">
+                    />
+                </span>
+              </a>
+            </span>
+            </div>
+            <div class="product-card">
+                <a 
+                class="book-container"
+                href="https://www.amazon.in/Harry-Potter-Prisoner-Azkaban/dp/1408855674/ref=sr_1_16?adgrpid=73576961751&dib=eyJ2IjoiMSJ9.wfTyxvY_fX8xHPuCfc-C0Z7JJ5Jr8RBYEJ8uHPSLmSSU0t7BqoDGnA0RLPwjPii9XuJgSzyK4z4Ti1IBiRCN6mCibFH27p8ALKH855AsrUGSGxzOKKNEqbRI3pWlJTA76Zg2tQdiiJ2BM5N1QtHUOAw1XM8F7cPBl9k1lXPgcIneYgdiJtsAqMf7WslITPtGJo-CJDKzAL6RaavxcMsHfL5MaFJJ6Rn3RKEjmkyMts0.CVatg4kMA9Cks2xaO-BFW6_FEcBhRVbSKeYvna5_2yg&dib_tag=se&ext_vrnc=hi&gclid=Cj0KCQjw-_mvBhDwARIsAA-Q0Q6avFSMaMJpHBKw-ObAEBVZEuUIAzTITq9sEU8m_4NVPOKC0D_173YaAjQ2EALw_wcB&hvadid=590653767070&hvdev=c&hvlocphy=1007816&hvnetw=g&hvqmt=b&hvrand=14102357533742322938&hvtargid=kwd-376289800791&hydadcr=24539_2265400&keywords=harry+potter+books+pack&qid=1711253597&sr=8-16"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <span class="book">
+                  <img
+                    alt=""
+                    src="/3.jpeg">
+                    />
+                </span>
+              </a>
+            </span>
+            </div>
+            <div class="product-card">
+                <a 
+                class="book-container"
+                href="https://www.amazon.in/Harry-Potter-Goblet-Fire-Rowling-ebook/dp/B019PIOJWW/ref=sr_1_10?adgrpid=73576961751&dib=eyJ2IjoiMSJ9.wfTyxvY_fX8xHPuCfc-C0Z7JJ5Jr8RBYEJ8uHPSLmSSU0t7BqoDGnA0RLPwjPii9XuJgSzyK4z4Ti1IBiRCN6mCibFH27p8ALKH855AsrUGSGxzOKKNEqbRI3pWlJTA76Zg2tQdiiJ2BM5N1QtHUOAw1XM8F7cPBl9k1lXPgcIneYgdiJtsAqMf7WslITPtGJo-CJDKzAL6RaavxcMsHfL5MaFJJ6Rn3RKEjmkyMts0.CVatg4kMA9Cks2xaO-BFW6_FEcBhRVbSKeYvna5_2yg&dib_tag=se&ext_vrnc=hi&gclid=Cj0KCQjw-_mvBhDwARIsAA-Q0Q6avFSMaMJpHBKw-ObAEBVZEuUIAzTITq9sEU8m_4NVPOKC0D_173YaAjQ2EALw_wcB&hvadid=590653767070&hvdev=c&hvlocphy=1007816&hvnetw=g&hvqmt=b&hvrand=14102357533742322938&hvtargid=kwd-376289800791&hydadcr=24539_2265400&keywords=harry+potter+books+pack&qid=1711253597&sr=8-10"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <span class="book">
+                  <img
+                    alt=""
+                    src="/4.jpeg">
+                    />
+                </span>
+              </a>
+            </span>
+            </div>
+            <div class="product-card">
+                <a 
+                class="book-container"
+                href="https://www.amazon.in/gp/product/B019PIOJV8?notRedirectToSDP=1&ref_=dbs_mng_calw_4&storeType=ebooks"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <span class="book">
+                  <img
+                    alt=""
+                    src="/5.jpeg">
+                    />
+                </span>
+              </a>
+            </span>
+            </div>
+            <div class="product-card">
+                <a 
+                class="book-container"
+                href="https://www.amazon.in/gp/product/B019PIOJZE?notRedirectToSDP=1&ref_=dbs_mng_calw_5&storeType=ebooks"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <span class="book">
+                  <img
+                    alt=""
+                    src="/6.jpeg">
+                    />
+                </span>
+              </a>
+            </span>
+            </div>
+            <div class="product-card">
+                <a 
+                class="book-container"
+                href="https://www.amazon.in/Harry-Potter-Goblet-Fire-Rowling-ebook/dp/B019PIOJWW/ref=sr_1_10?adgrpid=73576961751&dib=eyJ2IjoiMSJ9.wfTyxvY_fX8xHPuCfc-C0Z7JJ5Jr8RBYEJ8uHPSLmSSU0t7BqoDGnA0RLPwjPii9XuJgSzyK4z4Ti1IBiRCN6mCibFH27p8ALKH855AsrUGSGxzOKKNEqbRI3pWlJTA76Zg2tQdiiJ2BM5N1QtHUOAw1XM8F7cPBl9k1lXPgcIneYgdiJtsAqMf7WslITPtGJo-CJDKzAL6RaavxcMsHfL5MaFJJ6Rn3RKEjmkyMts0.CVatg4kMA9Cks2xaO-BFW6_FEcBhRVbSKeYvna5_2yg&dib_tag=se&ext_vrnc=hi&gclid=Cj0KCQjw-_mvBhDwARIsAA-Q0Q6avFSMaMJpHBKw-ObAEBVZEuUIAzTITq9sEU8m_4NVPOKC0D_173YaAjQ2EALw_wcB&hvadid=590653767070&hvdev=c&hvlocphy=1007816&hvnetw=g&hvqmt=b&hvrand=14102357533742322938&hvtargid=kwd-376289800791&hydadcr=24539_2265400&keywords=harry+potter+books+pack&qid=1711253597&sr=8-10#:~:text=7-,Harry%20Potter%20and%20the%20Deathly%20Hallows,-J.K.%20Rowling"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <span class="book">
+                  <img
+                    alt=""
+                    src="/7.jpeg">
+                    />
+                </span>
+              </a>
+            </span>
+            </div>
+        </div>
+    </section>
+   </div>
+   <!-- <img src="https://www.wizardingworld.com/images/home/horizons_hogwarts.png" style="width: 100%; margin-top:-200px;"> -->
+   <div id="fourth" class="background" style="position: relative;">
+    <div style="display:flex;justify-content:center;position:absolute;top:5%;left:1%;width: 100%;">
+        <div style="width:20%;max-width: 350px;height:1px;background-color:#cdb373;"></div>
+        <div style="display: flex;align-items: center;margin: 0 2.5%;width: 25%;">
+            <img src="https://cdn-hogwartslegacy.warnerbrosgames.com/home/live-the-unwritten.webp" style="height:3vh;">
+        </div>
+        <div style="width:20%;max-width: 350px;height:1px;background-color:#cdb373;"></div>
+    </div>
+
+    <div style="position:absolute;top:100px;width:100%;left:5%">
+        <div style="display: flex;justify-content:space-between;">
+            <div class="image-container" style="width: 30%;">
+                <img src="https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-panel-03.jpg" alt="Background Image" class="poly" style="height:300px;position:absolute;top:40px;left:15px">
+                <img src="https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-frame-a.webp" alt="Overlay Image" class="overlay">
+                <img src="	https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-icon-03.png" style="height:40px;position:absolute;top:5.5%;left:49%">
+                <img src="	https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-icon-03.png" style="height:40px;position:absolute;bottom:26%;left:7%">
+                <h2 style="font-family: Crimson Text, serif;;color:rgb(255, 244, 226)">Explore an Open World</h2>
+            </div>
+            <div class="image-container" style="width: 30%;">
+                <img src="https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-panel-01.jpg" alt="Background Image" class="poly" style="height:300px;position:absolute;top:40px;left:15px">
+                <img src="https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-frame-a.webp" alt="Overlay Image" class="overlay">
+                <img src="https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-icon-01.png" style="height:40px;position:absolute;top:5.5%;left:49%">
+                <img src="https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-icon-01.png" style="height:40px;position:absolute;bottom:26%;left:7%">
+                <h2 style="font-family: Crimson Text, serif;;color:rgb(255, 244, 226)">Be the Witch or Wizard <br> You Want to be</h2>
+            </div>
+            <div class="image-container" style="width: 30%;">
+                <img src="https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-panel-02.jpg" alt="Background Image" class="poly" style="height:300px;position:absolute;top:40px;left:15px">
+                <img src="https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-frame-a.webp" alt="Overlay Image" class="overlay">
+                <img src="	https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-icon-02.png" style="height:40px;position:absolute;top:5.5%;left:49%">
+                <img src="	https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-icon-02.png" style="height:40px;position:absolute;bottom:26%;left:7%">
+                <h2 style="font-family: Crimson Text, serif;;color:rgb(255, 244, 226)">Experience a New Wizarding <br>World Adventure<h2>
+            </div>
+        </div>
+        <div style="display: flex;justify-content:center;margin-top:20px">
+        <div style="display:flex;margin-left:-200px">
+            <img src="https://cdn-hogwartslegacy.warnerbrosgames.com/home/hero-logo.webp" style="height:120px;">
+            <div style="height:100px;width:400px;border:solid 2px #b69451; border-radius:10px;margin-left:50px;background-image:url(	https://cdn-hogwartslegacy.warnerbrosgames.com/static/available-now-bg.jpg) ">
+                <div style="display: flex;justify-content:center">
+                <p style="font-family: Crimson Text, serif;color:#b69451;
+                ">OUT NOW ON PLAYSTATION, XBOX, & PC</p>
+            </div>
+            <div style="display: flex;justify-content:center">
+            <img src="	https://cdn-hogwartslegacy.warnerbrosgames.com/static/rule-a.png
+            " style="width: 200px;">
+            </div>
+            <div style="display: flex;justify-content:center">
+               <h3 style="font-family: Crimson Text, serif;margin:0px;color:#b69451;
+               ">AVAILABLE NOW</h3>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+   
+</div>
+
+    <!-- books -->
+   
+        <script>
+            function id(id) { 
+                return document.getElementById(id); 
+            } 
+            var count = 0; 
+            var pattern, text, Psize, Tsize; 
+            var idcountrater = 0; 
+            var conti = 0; 
+            const slidingWindowTech = async (pattern, Psize, sum, k) => { 
+                console.log("hola") 
+                var max_sum = 0; 
+                let maxi = document.createElement('div'); 
+                maxi.id = "message"; 
+                maxi.classList.add("message"); 
+                maxi.innerText = `MaximumSum is ${max_sum}` 
+                console.log(maxi) 
+                id("pattern_text").appendChild(maxi); 
+                let current_sum = 0; 
+                let current = document.createElement('div'); 
+                current.id = "message"; 
+                current.classList.add("message"); 
+                current.innerText = `CurrentSum is ${current_sum}` 
+                id("pattern_text").appendChild(current); 
+                for (let i = 0; i < Psize - k + 1; i++) { 
+                    await new Promise((resolve) => 
+                        setTimeout(() => { 
+                            resolve(); 
+                        }, 1000) 
+                    ) 
+                    console.log(i + " " + (i + k - 1)); 
+                    id(i).style.borderLeft = "2px solid white"
+                    id(i).style.borderTop = "2px solid white"
+                    id(i).style.borderBottom = "2px solid white"
+                    id(i + 1).style.borderBottom = "2px solid white"
+                    id(i + 1).style.borderTop = "2px solid white"
+                    id(i + 2).style.borderTop = "2px solid white"
+                    id(i + 2).style.borderBottom = "2px solid white"
+                    id((i + k - 1)).style.borderRight = "2px solid white"; 
+                    id(i + k - 1).style.borderTop = "2px solid white"
+                    id(i + k - 1).style.borderBottom = "2px solid white"
+                    if (i != 0) { 
+                        // current_sum=current_sum-pattern[i-1] 
+                        id(i - 1).style.color = "Red"
+                        await new Promise((resolve) => 
+                            setTimeout(() => { 
+                                resolve(); 
+                            }, 1000) 
+                        ) 
+                        current_sum = current_sum - pattern[i - 1] 
+                        current.innerText = 
+                            `CurrentSum after subtracting ${i - 1}th ` + 
+                            `element from ${i} window is ${current_sum}` 
+                        id(i - 1).style.color = "white"
+                        await new Promise((resolve) => 
+                            setTimeout(() => { 
+                                resolve(); 
+                            }, 1000) 
+                        ) 
+                        id(i + k - 1).style.color = "green"
+                        await new Promise((resolve) => 
+                            setTimeout(() => { 
+                                resolve(); 
+                            }, 1000) 
+                        ) 
+                        current_sum = current_sum + pattern[i + k - 1] 
+                        current.innerText = 
+            `CurrentSum after adding ${i + k - 1}th in ${i} window is ${current_sum}` 
+                        id(i + k - 1).style.color = "white"
+                        await new Promise((resolve) => 
+                            setTimeout(() => { 
+                                resolve(); 
+                            }, 1000) 
+                        ) 
+                    } 
+                    else { 
+                        for (let j = 0; j < k; j++) { 
+                            console.log("hola 1 " + current_sum) 
+                            id((i + j)).style.color = "Red"
+                            await new Promise((resolve) => 
+                                setTimeout(() => { 
+                                    resolve(); 
+                                }, 1000) 
+                            ) 
+                            current_sum = current_sum + pattern[i + j]; 
+                            current.innerText = 
+                                `CurrentSum is for ${i}th window ${current_sum}` 
+                            await new Promise((resolve) => 
+                                setTimeout(() => { 
+                                    resolve(); 
+                                }, 1000) 
+                            ) 
+                            id((i + j)).style.color = "white"
+                        } 
+                    } 
+                    id(i).style.borderLeft = "none"
+                    id(i).style.borderTop = "none"
+                    id(i).style.borderBottom = "none"
+                    id(i + 1).style.borderBottom = "none"
+                    id(i + 1).style.borderTop = "none"
+                    id(i + 2).style.borderTop = "none"
+                    id(i + 2).style.borderBottom = "none"
+                    id((i + k - 1)).style.borderRight = "none"; 
+                    id(i + k - 1).style.borderTop = "none"
+                    id(i + k - 1).style.borderBottom = "none"
+                    console.log(current_sum) 
+            
+                    // Update result if required. 
+                    // max_sum = max(current_sum, max_sum); 
+                    if (current_sum > max_sum) max_sum = current_sum; 
+                    maxi.innerText = `MaximumSum is ${max_sum}` 
+                } 
+                current.style.display = "none"
+            } 
+            let idcount = 0; 
+            window.onload = async () => { 
+                id("displayer").style.display = "none"; 
+                id("start").addEventListener('click', () => { 
+                    id("start").style.display = "none"
+                    id("displayer").style.display = "flex"; 
+                    pattern = [1, 4, 2, 10, 2, 3, 1, 0, 20] 
+                    Psize = 9 
+                    sum = 24 
+                    let idcount1 = 0; 
+                    for (let i = 0; i < Psize; i++) { 
+                        let tile = document.createElement('span'); 
+                        tile.id = idcount; 
+                        tile.classList.add("tile"); 
+                        tile.innerText = pattern[i]; 
+                        id("pattern").appendChild(tile); 
+                        idcount++; 
+                    } 
+                    slidingWindowTech(pattern, Psize, sum, 4) 
+                }) 
+            }
+            var currentIndex = 0;
+  var divs = document.getElementsByClassName('content');
+
+  // Show the first div initially
+  divs[currentIndex].style.display = 'inline-block';
+
+  function showNext() {
+    if (currentIndex < divs.length - 1) {
+      divs[currentIndex].style.display = 'none'; // Hide current div
+      currentIndex++; // Move to next div
+      divs[currentIndex].style.display = 'inline-block'; // Show next div
+    }
+  }
+
+  function showPrevious() {
+    if (currentIndex > 0) {
+      divs[currentIndex].style.display = 'none'; // Hide current div
+      currentIndex--; // Move to previous div
+      divs[currentIndex].style.display = 'inline-block'; // Show previous div
+    }
+  }
+            
+        </script>
+</body>
+</html>
